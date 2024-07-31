@@ -135,6 +135,7 @@
 // };
 
 // export default Navbar;
+
 import React, { useEffect, useState } from "react";
 import logo from '../assets/final.png';
 import { Link } from "react-scroll";
@@ -152,12 +153,8 @@ Modal.setAppElement('#root');
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(null); // Single state to track the open modal
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isCoachModalOpen, setIsCoachModalOpen] = useState(false);
-  const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
-  const [isChampModalOpen, setIsChampModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -180,51 +177,13 @@ const Navbar = () => {
     };
   }, []);
 
-  const openLoginModal = (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
-    setIsLoginModalOpen(true);
-    setIsSignupModalOpen(false); // Close signup modal if open
+  const openModalHandler = (modalType) => {
+    setOpenModal(modalType);
+    setIsDropdownOpen(false); // Close dropdown when opening a modal
   };
 
-  const closeLoginModal = () => {
-    setIsLoginModalOpen(false);
-  };
-
-  const openSignupModal = (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
-    setIsSignupModalOpen(true);
-    setIsLoginModalOpen(false); // Close login modal if open
-  };
-
-  const closeSignupModal = () => {
-    setIsSignupModalOpen(false);
-  };
-
-  const openCoachModal = () => {
-    setIsCoachModalOpen(true);
-    setIsDropdownOpen(false); // Close dropdown when modal opens
-  };
-
-  const closeCoachModal = () => {
-    setIsCoachModalOpen(false);
-  };
-
-  const openGuestModal = () => {
-    setIsGuestModalOpen(true);
-    setIsDropdownOpen(false); // Close dropdown when modal opens
-  };
-
-  const closeGuestModal = () => {
-    setIsGuestModalOpen(false);
-  };
-
-  const openChampModal = () => {
-    setIsChampModalOpen(true);
-    setIsDropdownOpen(false); // Close dropdown when modal opens
-  };
-
-  const closeChampModal = () => {
-    setIsChampModalOpen(false);
+  const closeModalHandler = () => {
+    setOpenModal(null);
   };
 
   const navItems = [
@@ -259,19 +218,19 @@ const Navbar = () => {
                   {isDropdownOpen && (
                     <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md">
                       <button
-                        onClick={openCoachModal}
+                        onClick={() => openModalHandler('coach')}
                         className="block px-4 py-2 text-gray900 hover:bg-gray-200"
                       >
                         Coach Admission
                       </button>
                       <button
-                        onClick={openGuestModal}
+                        onClick={() => openModalHandler('guest')}
                         className="block px-4 py-2 text-gray900 hover:bg-gray-200"
                       >
                         Guest Admission
                       </button>
                       <button
-                        onClick={openChampModal}
+                        onClick={() => openModalHandler('champ')}
                         className="block px-4 py-2 text-gray900 hover:bg-gray-200"
                       >
                         Champ Admission
@@ -295,8 +254,8 @@ const Navbar = () => {
           </ul>
 
           <div className="space-x-12 hidden lg:flex items-center">
-            <a href="#" onClick={openLoginModal} className="text-brandPrimary hover:text-gray900">Login</a>
-            <button onClick={openSignupModal} className="bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey">Register</button>
+            <a href="#" onClick={(e) => { e.preventDefault(); openModalHandler('login'); }} className="text-brandPrimary hover:text-gray900">Login</a>
+            <button onClick={(e) => { e.preventDefault(); openModalHandler('signup'); }} className="bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey">Register</button>
           </div>
 
           {/* menu btn, visible on mobile screen */}
@@ -328,19 +287,19 @@ const Navbar = () => {
                 {isDropdownOpen && (
                   <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md">
                     <button
-                      onClick={openCoachModal}
+                      onClick={() => openModalHandler('coach')}
                       className="block px-4 py-2 text-gray900 hover:bg-gray-200"
                     >
                       Coach Admission
                     </button>
                     <button
-                      onClick={openGuestModal}
+                      onClick={() => openModalHandler('guest')}
                       className="block px-4 py-2 text-gray900 hover:bg-gray-200"
                     >
                       Guest Admission
                     </button>
                     <button
-                      onClick={openChampModal}
+                      onClick={() => openModalHandler('champ')}
                       className="block px-4 py-2 text-gray900 hover:bg-gray-200"
                     >
                       Champ Admission
@@ -366,11 +325,11 @@ const Navbar = () => {
       </nav>
 
       {/* Modals */}
-      <LoginModal isOpen={isLoginModalOpen} onRequestClose={closeLoginModal} />
-      <SignupModal isOpen={isSignupModalOpen} onRequestClose={closeSignupModal} />
-      <CoachAdmissionModal isOpen={isCoachModalOpen} onRequestClose={closeCoachModal} />
-      <GuestAdmissionModal isOpen={isGuestModalOpen} onRequestClose={closeGuestModal} />
-      <ChampAdmissionModal isOpen={isChampModalOpen} onRequestClose={closeChampModal} />
+      <LoginModal isOpen={openModal === 'login'} onRequestClose={closeModalHandler} />
+      <SignupModal isOpen={openModal === 'signup'} onRequestClose={closeModalHandler} />
+      <CoachAdmissionModal isOpen={openModal === 'coach'} onRequestClose={closeModalHandler} />
+      <GuestAdmissionModal isOpen={openModal === 'guest'} onRequestClose={closeModalHandler} />
+      <ChampAdmissionModal isOpen={openModal === 'champ'} onRequestClose={closeModalHandler} />
     </header>
   );
 };

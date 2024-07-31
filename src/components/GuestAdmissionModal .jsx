@@ -29,7 +29,7 @@ const GuestAdmissionModal = ({ isOpen, onRequestClose }) => {
       className="modal-content"
       overlayClassName="modal-overlay"
     >
-      <h2 className="text-2xl font-bold mb-6 ">Coach Admission Form</h2>
+      <h2 className="text-2xl font-bold mb-6 ">Guest Admission Form</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex flex-col">
           <label htmlFor="name" className="font-medium mb-2">

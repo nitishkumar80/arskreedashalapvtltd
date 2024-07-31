@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-
+import './Service.css'
 const Services = () => {
   const sportsServices = [
     {
@@ -37,7 +37,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto" id="service">
+    <div className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto" id="services">
       {/* Sports service cards */}
       <motion.div
         variants={fadeIn("left", 0.2)}

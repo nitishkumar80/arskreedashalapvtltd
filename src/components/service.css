@@ -1,0 +1,36 @@
+/* Service.css */
+#services {
+  padding: 4rem 0;
+}
+
+.text-neutralDGrey {
+  color: #333;
+}
+
+.text-neutralGrey {
+  color: #666;
+}
+
+.bg-brandPrimary {
+  background-color: #3490dc;
+}
+
+.bg-neutralDGrey {
+  background-color: #333;
+}
+
+.bg-neutralGrey {
+  background-color: #666;
+}
+
+.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hover\:border-indigo-700:hover {
+  border-color: #4c51bf;
+}
+
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}

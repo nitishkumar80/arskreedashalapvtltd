@@ -10,7 +10,7 @@
   }
   
   .text-container {
-    
+    font-family: "Titillium Web", sans-serif;
     flex: 1;
     max-width: 900px; /* Adjust the maximum width as needed */
     text-align: center; /* Center the text */

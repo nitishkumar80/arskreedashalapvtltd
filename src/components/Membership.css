@@ -1,5 +1,7 @@
 /* Membership.css */
-
+body{
+    font-family: "Titillium Web", sans-serif;
+}
 .membership-container {
     padding: 2rem 3.5rem;
     max-width: 1200px;
@@ -8,11 +10,14 @@
 
 .membership-heading {
     text-align: center;
+
     margin-bottom: 3rem;
+    font-family: "Titillium Web", sans-serif;
 }
 
 .membership-heading h2 {
     font-size: 2.5rem;
+    font-family: "Titillium Web", sans-serif;
     color: #4A4A4A;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -20,6 +25,7 @@
 
 .membership-heading p {
     font-size: 0.875rem;
+    font-family: "Titillium Web", sans-serif;
     color: #6B6B6B;
 }
 
@@ -50,12 +56,14 @@
 }
 
 .membership-card h3 {
+    font-family: "Titillium Web", sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .membership-card p {
+    font-family: "Titillium Web", sans-serif;
     font-size: 0.875rem;
     color: #e0e0e0; /* Light grey text for better readability */
     margin-bottom: 1rem;
@@ -63,6 +71,7 @@
 
 .membership-card .price {
     font-size: 1.25rem;
+    font-family: "Titillium Web", sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -70,6 +79,7 @@
 .membership-card .quote {
     font-size: 1rem;
     font-style: italic;
+    font-family: "Titillium Web", sans-serif;
     color: #e0e0e0; /* Light grey text for quotes */
     margin-top: 1rem;
     border-top: 1px solid #e0e0e0;
@@ -78,6 +88,7 @@
 
 .membership-card .btn-primary {
     display: inline-block;
+    font-family: "Titillium Web", sans-serif;
     background-color: #ffffff; /* White background for button */
     color: #28a745; /* Green text color to match card */
     padding: 0.5rem 1rem;
@@ -89,5 +100,6 @@
 }
 
 .membership-card .btn-primary:hover {
+    font-family: "Titillium Web", sans-serif;
     background-color: #e0e0e0; /* Light grey background on hover */
 }

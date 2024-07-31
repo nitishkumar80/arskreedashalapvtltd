@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
-
 const Services = () => {
   const sportsServices = [
     {
@@ -41,10 +39,10 @@ const Services = () => {
     <div className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto" id="services">
       {/* Sports service cards */}
       <div className="mt-20 text-center md:w-1/2 mx-auto">
-        <h2 className="text-4xl text-neutralDGrey font-semibold mb-3">
+        <h2 className="text-4xl text-neutralDGrey font-semibold mb-3" style={{ fontFamily: 'Titillium Web, sans-serif' }}>
           Explore Our Sports Services
         </h2>
-        <p className="text-neutralGrey">
+        <p className="text-neutralGrey" style={{ fontFamily: 'Titillium Web, sans-serif' }}>
           We offer a wide range of sports services to enhance your skills and performance.
         </p>
       </div>
@@ -54,6 +52,7 @@ const Services = () => {
           <div
             key={service.id}
             className="px-4 py-8 text-center md:w-[300px] mx-auto md:h-80 rounded-md shadow cursor-pointer hover:-translate-y-5 hover:border-b-4 hover:border-indigo-700 transition-all duration-300 flex items-center justify-center h-full"
+            style={{ fontFamily: 'Titillium Web, sans-serif' }}
           >
             <div className="">
               <div className="bg-[#E8F5E9] w-14 h-14 mx-auto mb-4 rounded-tl-3xl rounded-br-3xl">

@@ -1,0 +1,32 @@
+.carousel-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .image-container {
+    flex: 1;
+    max-width: 500px; /* Adjust the maximum width as needed */
+  }
+  
+  .text-container {
+    
+    flex: 1;
+    max-width: 900px; /* Adjust the maximum width as needed */
+    text-align: center; /* Center the text */
+  }
+  h1{
+
+ 
+  }
+  
+  @media (min-width: 768px) {
+    .text-container {
+        max-width: 1000px; /* Adjust the maximum width as needed */
+      text-align: left; /* Align text to the left on larger screens */
+    }
+    .image-container{
+
+    }
+  }
+  

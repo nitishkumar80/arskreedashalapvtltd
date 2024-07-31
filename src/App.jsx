@@ -1,7 +1,8 @@
 
 import "./App.css";
 import About from "./components/About";
-import Blog from "./components/Blog";
+import Contact from "./components/Contact";
+import Blog from "./components/Contact";
 import MyFooter from "./components/Footer";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -21,7 +22,7 @@ function App() {
       <Services/>
       <About/>
       <Product/>
-      <Blog/>
+<Contact/>
       <Newsletter/>
       <MyFooter/>
     </>

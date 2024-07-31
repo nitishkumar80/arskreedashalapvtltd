@@ -1,0 +1,93 @@
+/* Membership.css */
+
+.membership-container {
+    padding: 2rem 3.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.membership-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.membership-heading h2 {
+    font-size: 2.5rem;
+    color: #4A4A4A;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.membership-heading p {
+    font-size: 0.875rem;
+    color: #6B6B6B;
+}
+
+.membership-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.membership-card {
+    background-color: #4CAF4F; /* Green background color */
+    padding: 1.5rem;
+    height: 500px; /* Set height to 500px */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* White text color for contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Add transition for hover effect */
+    transform: perspective(1000px); /* Enable 3D effects */
+}
+
+.membership-card:hover {
+    transform: scale(1.05) rotateX(5deg); /* Scale up and rotate on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+    border-bottom: 4px solid #007bff; /* Add a bottom border effect */
+}
+
+.membership-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.membership-card p {
+    font-size: 0.875rem;
+    color: #e0e0e0; /* Light grey text for better readability */
+    margin-bottom: 1rem;
+}
+
+.membership-card .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.membership-card .quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: #e0e0e0; /* Light grey text for quotes */
+    margin-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+.membership-card .btn-primary {
+    display: inline-block;
+    background-color: #ffffff; /* White background for button */
+    color: #28a745; /* Green text color to match card */
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease; /* Add transition for button hover effect */
+}
+
+.membership-card .btn-primary:hover {
+    background-color: #e0e0e0; /* Light grey background on hover */
+}

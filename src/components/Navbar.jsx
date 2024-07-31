@@ -34,10 +34,11 @@ const Navbar = () => {
   const navItems = [
     { link: "Home", path: "home" },
     { link: "Service", path: "services" },
+    { link: "Membership", path: "product" },
     { link: "About", path: "about" },
-    { link: "Product", path: "product" },
-    { link: "Testimonial", path: "testimonial" },
-    { link: "FAQ", path: "faq" },
+   
+    
+    { link: "Contact", path: "faq" },
   ];
 
   return (

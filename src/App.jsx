@@ -1,6 +1,7 @@
 
 import "./App.css";
 import About from "./components/About";
+import Admission from "./components/Admission";
 import Contact from "./components/Contact";
 import Blog from "./components/Contact";
 import MyFooter from "./components/Footer";
@@ -24,6 +25,7 @@ function App() {
       <Product/>
 <Contact/>
       <Newsletter/>
+      <Admission/>
       <MyFooter/>
     </>
   );

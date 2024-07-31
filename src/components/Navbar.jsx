@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from '../assets/final.png';
 import { Link } from "react-scroll";
-
-// import icons from react icons
 import { GrLanguage } from "react-icons/gr";
 import { FaTimes, FaBars } from "react-icons/fa";
+import LoginModal from './LoginModal'; // Import your modal component
+import SignupModal from './SignupModal'; // Import your modal component
+import Modal from 'react-modal';
+
+// Set app element for accessibility
+Modal.setAppElement('#root');
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,14 +37,33 @@ const Navbar = () => {
     };
   }, []);
 
+  const openLoginModal = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    setIsLoginModalOpen(true);
+    setIsSignupModalOpen(false); // Close signup modal if open
+  };
+
+  const closeLoginModal = () => {
+    setIsLoginModalOpen(false);
+  };
+
+  const openSignupModal = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    setIsSignupModalOpen(true);
+    setIsLoginModalOpen(false); // Close login modal if open
+  };
+
+  const closeSignupModal = () => {
+    setIsSignupModalOpen(false);
+  };
+
   const navItems = [
     { link: "Home", path: "home" },
     { link: "Service", path: "services" },
     { link: "Membership", path: "product" },
     { link: "About", path: "about" },
-   
-    
     { link: "Contact", path: "faq" },
+    { link: "Admission", path: "admission" },
   ];
 
   return (
@@ -66,8 +91,8 @@ const Navbar = () => {
           </ul>
 
           <div className="space-x-12 hidden lg:flex items-center">
-            <a href="/" className="hidden lg:flex items-center text-brandPrimary hover:text-gray900">Login</a>
-            <button className="bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey">Sign up</button>
+            <a href="#" onClick={openLoginModal} className="text-brandPrimary hover:text-gray900">Login</a>
+            <button onClick={openSignupModal} className="bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey">Register</button>
           </div>
 
           {/* menu btn, visible on mobile screen */}
@@ -101,6 +126,10 @@ const Navbar = () => {
           ))}
         </div>
       </nav>
+
+      {/* Modals */}
+      <LoginModal isOpen={isLoginModalOpen} onRequestClose={closeLoginModal} />
+      <SignupModal isOpen={isSignupModalOpen} onRequestClose={closeSignupModal} />
     </header>
   );
 };

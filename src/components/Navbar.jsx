@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from '../assets/Favicon.png';
+import logo from '../assets/final.png';
 
 import { Link } from "react-scroll";
 
